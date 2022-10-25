@@ -10,11 +10,11 @@ app.get('/courses', (req, res) => {
 })
 app.get('/courses/:id', (req, res) => {
     const id = req.params.id
-    const selectedCoursebyId = courses.find(n =>
+    const selectedCoursesbyId = courses.find(n =>
         n.course_id == id
     )
     // console.log(selectedCoursebyId);
-    res.send(selectedCoursebyId)
+    res.send(selectedCoursesbyId)
 })
 
 
