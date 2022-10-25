@@ -10,11 +10,19 @@ app.get('/', (req, res) => {
 })
 app.get('/courses/:id', (req, res) => {
     const id = req.params.id
-    const selectedCourse = courses.find(n =>
+    const selectedCoursebyId = courses.find(n =>
         n.course_id == id
     )
-    res.send(selectedCourse)
+    res.send(selectedCoursebyId)
 })
+app.get('/courses/:name', (req, res) => {
+    const name = req.params.name
+    const selectedCoursebyName = courses.find(n =>
+        n.course_name == name
+    )
+    res.send(selectedCoursebyName)
+})
+
 app.listen(port, () => {
     console.log('All Courses', port);
 })
